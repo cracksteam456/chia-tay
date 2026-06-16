@@ -858,13 +858,20 @@ function startMusicAudio(){
         freqData=new Uint8Array(analyser.frequencyBinCount);
         src.connect(analyser); analyser.connect(audioCtx.destination);
       }
-    }catch(e){ analyser=null; }
+    }catch(e){
+      analyser=null;
+      // Fallback: audio vẫn phát bình thường dù Web Audio API lỗi
+    }
   }
-  audioEl.play().then(connectAnalyser).catch(()=>{
-    const retry=()=>{ audioEl.play().then(connectAnalyser).catch(()=>{}); };
-    document.addEventListener('click',retry,{once:true});
-    document.addEventListener('touchstart',retry,{once:true});
-  });
+  audioEl.load();
+  const playPromise=audioEl.play();
+  if(playPromise!==undefined){
+    playPromise.then(connectAnalyser).catch(()=>{
+      const retry=()=>{ audioEl.play().then(connectAnalyser).catch(()=>{}); };
+      document.addEventListener('click',retry,{once:true});
+      document.addEventListener('touchstart',retry,{once:true});
+    });
+  }
 }
 
 /* [4] Progress bar click to seek */

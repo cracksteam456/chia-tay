@@ -283,17 +283,19 @@ body::after{
 /* ── STOP BUTTON ── */
 #btn-stop{
   font-family:var(--mono);font-size:clamp(0.52rem,1.15vw,0.62rem);
-  letter-spacing:0.45em;color:var(--dim);background:transparent;
-  border:1px solid rgba(110,110,110,0.18);padding:0.75rem 2rem;
-  cursor:pointer;position:relative;overflow:hidden;
-  display:flex;align-items:center;gap:0.65rem;
+  letter-spacing:0.3em;color:var(--dim);background:transparent;
+  border:1px solid rgba(110,110,110,0.18);
+  padding:0.75rem 1.8rem;
+  cursor:pointer;position:relative;overflow:visible;
+  display:inline-flex;align-items:center;justify-content:center;gap:0.6rem;
+  white-space:nowrap;
   outline:none;-webkit-tap-highlight-color:transparent;
   -webkit-appearance:none;appearance:none;user-select:none;
   transition:color 0.4s ease,border-color 0.4s ease,transform 0.15s ease;
 }
 #btn-stop:focus{outline:none}
 /* [2] Trạng thái xác nhận */
-#btn-stop.confirm{color:var(--white);border-color:rgba(168,168,168,0.4);letter-spacing:0.5em}
+#btn-stop.confirm{color:var(--white);border-color:rgba(168,168,168,0.4)}
 #btn-stop:hover:not(:disabled):not(.confirm){color:var(--accent);border-color:rgba(168,168,168,0.3)}
 #btn-stop:disabled{opacity:0.28;cursor:not-allowed}
 #btn-stop:active:not(:disabled){transform:scale(0.97)}
@@ -309,10 +311,16 @@ body::after{
 }
 #btn-stop:hover:not(:disabled):not(.confirm) .stop-icon::after{transform:translate(-50%,-50%) scale(1.25)}
 #btn-stop:disabled .stop-icon{display:none}
-.stop-label{transition:letter-spacing 0.4s ease}
+.stop-label{
+  display:inline;
+  white-space:nowrap;
+  transition:color 0.3s ease;
+}
 .stop-countdown{
-  font-family:var(--mono);font-size:clamp(0.46rem,1vw,0.54rem);
-  color:var(--soft);letter-spacing:0.1em;min-width:1.2em;text-align:right;
+  font-family:var(--mono);font-size:clamp(0.44rem,1vw,0.52rem);
+  color:var(--soft);letter-spacing:0.05em;
+  min-width:1.8em;
+  flex-shrink:0;
   transition:opacity 0.3s ease;
 }
 
@@ -536,78 +544,83 @@ body::after{
       <div class="letter-scroller" id="letter-scroller">
         <div class="letter-body" id="letter-body">
           <span class="para-sentinel"></span>
-          <span class="para">Em ơi,<br>
-          anh không biết bắt đầu từ đâu —<br>
-          <span class="em">nên anh chọn cách gửi thư này,<br>
-          vì có những điều nói thẳng<br>
-          thì miệng lại không chịu thốt ra được.</span></span><br><br>
+          <span class="para">Em à,<br><br>
+          Câu chuyện của chúng ta bắt đầu từ một nơi thật đặc biệt.</span><br><br>
 
           <span class="para-sentinel"></span>
-          <span class="para">Chúng ta gặp nhau trong Sky —<br>
-          giữa bầu trời đó anh thấy em,<br>
-          <span class="em">một người xa lạ mà sao lại dễ nói chuyện<br>
-          hơn bất cứ ai anh từng gặp ngoài đời thật.</span><br>
-          Từ 6 tháng 1 năm ngoái,<br>
-          anh đã quen với việc có em ở đầu dây —<br>
-          <span class="soft">những đêm bay qua bầu trời trong game,<br>
-          những đoạn chat ngớ ngẩn không đầu không cuối,<br>
-          những lần em kể chuyện lớp rồi cười một mình.</span><br>
-          Anh nhớ hết. Không bỏ sót gì đâu.</span><br><br>
+          <span class="para">Giữa bầu trời của Sky, giữa những nốt nhạc ngân nga<br>
+          và những cuộc gặp gỡ tưởng chừng chỉ là thoáng qua,<br>
+          anh vô tình gặp em.<br>
+          <span class="soft">Có lẽ lúc đó cả hai đều không nghĩ rằng<br>
+          một người xa lạ sau màn hình<br>
+          lại có thể trở thành một phần quan trọng<br>
+          trong cuộc sống của nhau.</span></span><br><br>
 
           <span class="para-sentinel"></span>
-          <span class="para">Nhưng yêu xa — nó mài mòn người ta theo kiểu<br>
-          không ai nhận ra cho đến khi đã mòn quá rồi.<br>
-          <span class="em">Anh ở đây, em ở đó.<br>
-          Mỗi người một cuộc sống chạy theo nhịp riêng —<br>
-          rồi những bất đồng cứ chồng lên nhau,</span><br>
-          không cái nào đủ lớn để thành cãi vã,<br>
-          <span class="soft">nhưng gộp lại thì đủ nặng<br>
-          để anh nhận ra mình đang mệt.</span></span><br><br>
+          <span class="para">Rồi chúng ta đến bên nhau.<br><br>
+          Chúng ta đã cùng trải qua rất nhiều chuyện,<br>
+          nhiều hơn những gì một mối quan hệ trên mạng thường có.<br>
+          <span class="soft">Có những ngày hạnh phúc, có những ngày cãi vã.<br>
+          Có những lần tưởng chừng đã mất nhau mãi mãi,<br>
+          nhưng rồi lại quay về.</span><br><br>
+          Cứ như vậy, chúng ta mắc kẹt trong một vòng lặp<br>
+          của yêu thương, tổn thương, chia xa rồi đoàn tụ.</span><br><br>
 
           <span class="para-sentinel"></span>
-          <span class="para">Anh không muốn kéo dài một thứ<br>
-          mà cả hai đều cảm nhận được<br>
-          <span class="em">nhưng không ai dám nói trước.</span><br>
-          Không phải vì hết thương —<br>
-          mà vì anh biết: <span class="em">giữ lại để tự an ủi<br>
-          không phải là yêu, đó chỉ là sợ.</span><br>
-          Và anh không muốn sợ thay vì thương em.</span><br><br>
+          <span class="para"><span class="soft">Đã có lúc anh nghĩ mình có thể chịu đựng được tất cả,<br>
+          chỉ cần cuối cùng người ở lại vẫn là em.</span><br><br>
+          Nhưng anh nhận ra mình cũng có giới hạn.<br><br>
+          Anh không muốn tiếp tục trở thành một người luôn chờ đợi.<br>
+          Anh không muốn sống trong những hy vọng rồi thất vọng nối tiếp nhau.<br>
+          <span class="em">Và hơn hết, anh không muốn biến bản thân<br>
+          thành nơi để em tìm đến mỗi khi cô đơn<br>
+          rồi lại rời đi khi mọi thứ đã ổn hơn.</span></span><br><br>
 
           <span class="para-sentinel"></span>
-          <span class="para">Em đang ở một giai đoạn quan trọng —<br>
-          cuối cấp 3, chuẩn bị thi đại học,<br>
-          <span class="em">cả tương lai đang nằm ngay trước mặt em.</span><br>
-          Anh không muốn trở thành thứ<br>
-          chiếm mất năng lượng em cần cho chính mình.<br>
-          <span class="soft">Em xứng đáng được dồn hết vào việc<br>
-          bước qua cánh cửa đó thật vững.</span></span><br><br>
+          <span class="para"><span class="em">Lần này, người chọn rời đi là anh.</span><br><br>
+          Không phải vì anh ghét em.<br>
+          Cũng không phải vì anh chưa từng yêu em thật lòng.<br>
+          <span class="soft">Mà bởi vì anh muốn được tự do khỏi những tổn thương kéo dài quá lâu,<br>
+          và cũng bởi vì anh nghĩ đây là điều tốt nhất cho cả hai.</span></span><br><br>
 
           <span class="para-sentinel"></span>
-          <span class="para">Lời khuyên thật lòng của anh —<br>
-          đừng mang chuyện này vào phòng thi.<br>
-          <span class="em">Hãy khóc nếu cần, rồi thôi.<br>
-          Tập trung vào đề, vào điểm số, vào ước mơ<br>
-          mà em đã nói với anh hôm nào đó lúc khuya.</span><br>
-          Anh vẫn tin em làm được —<br>
-          <span class="soft">điều đó không thay đổi dù chúng ta có hay không.</span></span><br><br>
+          <span class="para">Em đang là cô gái cuối cấp.<br>
+          Trước mắt em còn rất nhiều dự định, rất nhiều ước mơ<br>
+          và cả một tương lai rộng lớn đang chờ đợi.<br>
+          <span class="soft">Anh biết em sẽ còn phải cố gắng rất nhiều<br>
+          để chạm tới những điều em mong muốn.</span><br><br>
+          Còn anh, anh chưa bao giờ nghĩ mình là một người đặc biệt đến thế.<br>
+          Anh cũng chưa từng hiểu hết<br>
+          vì sao em lại tin tưởng và ngưỡng mộ anh nhiều như vậy.</span><br><br>
 
           <span class="para-sentinel"></span>
-          <span class="para">Cảm ơn em vì đã xuất hiện<br>
-          trong một cái game giữa trời —<br>
-          <span class="em">và khiến anh tin rằng<br>
-          đôi khi người ta gặp nhau không phải để mãi ở bên nhau,<br>
-          mà để nhớ rằng mình từng thật sự kết nối với ai đó.</span><br>
-          Với anh, em là điều đó.</span><br><br>
+          <span class="para"><span class="soft">Thực lòng mà nói, anh không thể ở cạnh em khi em cần.<br>
+          Anh không thể chăm sóc em như những người yêu nhau ngoài đời vẫn làm.<br>
+          Khoảng cách giữa chúng ta không chỉ là địa lý,<br>
+          mà còn là những điều cả hai đều không thể thay đổi.</span><br><br>
+          <span class="em">Vì vậy, anh chọn buông tay.</span></span><br><br>
 
           <span class="para-sentinel"></span>
-          <span class="para">Hãy sống tốt, em nhé.<br>
-          <span class="soft">Đừng để chuyện này ngồi nặng quá lâu —<br>
-          nó không xứng với thời gian của em đâu.</span><br>
-          Thi xong, nhớ ăn mừng một bữa thật to.<br>
-          <span class="em">Và khi em bước vào giảng đường đại học,<br>
-          anh hy vọng em sẽ mỉm cười —<br>
-          vì em tự làm được, không phải vì ai.</span><br><br>
-          <span class="soft">— Nguyễn Văn Long</span></span>
+          <span class="para">Nếu một ngày nào đó em đọc được những dòng này,<br>
+          hãy coi đây là lời tạm biệt cuối cùng của anh.<br><br>
+          Anh đã tha thứ cho em rồi.<br>
+          <span class="soft">Vậy nên em cũng đừng tự trách bản thân nữa.<br>
+          Đừng nghĩ rằng tất cả đều là lỗi của em.</span><br>
+          Và cũng đừng mít ướt nhé,<br>
+          dù anh biết em sẽ cãi rằng mình chẳng khóc đâu.</span><br><br>
+
+          <span class="para-sentinel"></span>
+          <span class="para"><span class="em">Hãy học thật tốt.<br>
+          Hãy sống thật tốt.<br>
+          Hãy theo đuổi những ước mơ mà em từng kể với anh.</span><br><br>
+          <span class="soft">Rồi một ngày nào đó, hãy gặp một người tử tế,<br>
+          một người có thể ở bên em, nắm lấy tay em khi em cần,<br>
+          và yêu em nhiều hơn cả cách anh đã từng.</span></span><br><br>
+
+          <span class="para-sentinel"></span>
+          <span class="para">Cảm ơn em vì đã xuất hiện trong những năm tháng tuổi trẻ của anh.<br><br>
+          Tạm biệt em.<br>
+          <span class="soft">Tạm biệt cô gái anh từng thương rất nhiều.</span></span>
         </div>
       </div>
     </div>
@@ -657,7 +670,7 @@ body::after{
    ══════════════════════════════════════════════════════ */
 const MUSIC_SRC     = "1.mp3";
 const MUSIC_LABEL   = "Anh yêu em";
-const RECEIVER_NAME = "Bé của anh";               // ← ví dụ: "Linh"
+const RECEIVER_NAME = "";               // ← ví dụ: "Linh"
 
 /* ── DOM REFS ── */
 const si          = document.getElementById('screen-intro');
@@ -726,6 +739,60 @@ injectReceiverName();
 /* ══════════════════════════════════════════════════
    HIỆU ỨNG GÕ CHỮ TIÊU ĐỀ INTRO
    ══════════════════════════════════════════════════ */
+function playIntroKey(){
+  try{
+    if(!audioCtx) audioCtx=new(window.AudioContext||window.webkitAudioContext)();
+    if(audioCtx.state==='suspended') audioCtx.resume();
+    const t=audioCtx.currentTime;
+    const buf=audioCtx.createBuffer(1,audioCtx.sampleRate*0.045,audioCtx.sampleRate);
+    const d=buf.getChannelData(0);
+    for(let i=0;i<d.length;i++) d[i]=(Math.random()*2-1)*Math.pow(1-i/d.length,2.2);
+    const src=audioCtx.createBufferSource(); src.buffer=buf;
+    const hpf=audioCtx.createBiquadFilter(); hpf.type='highpass'; hpf.frequency.value=900+Math.random()*500;
+    const gain=audioCtx.createGain();
+    gain.gain.setValueAtTime(0.028+Math.random()*0.014,t);
+    gain.gain.exponentialRampToValueAtTime(0.0001,t+0.045);
+    src.connect(hpf); hpf.connect(gain); gain.connect(audioCtx.destination);
+    src.start(t);
+  }catch(e){}
+}
+function playIntroSpace(){
+  // Tiếng lướt nhẹ giữa các từ
+  try{
+    if(!audioCtx) return;
+    const t=audioCtx.currentTime;
+    const buf=audioCtx.createBuffer(1,audioCtx.sampleRate*0.06,audioCtx.sampleRate);
+    const d=buf.getChannelData(0);
+    for(let i=0;i<d.length;i++) d[i]=(Math.random()*2-1)*Math.sin(Math.PI*i/d.length)*0.4;
+    const src=audioCtx.createBufferSource(); src.buffer=buf;
+    const lpf=audioCtx.createBiquadFilter(); lpf.type='lowpass'; lpf.frequency.value=600;
+    const gain=audioCtx.createGain();
+    gain.gain.setValueAtTime(0.012,t);
+    gain.gain.exponentialRampToValueAtTime(0.0001,t+0.06);
+    src.connect(lpf); lpf.connect(gain); gain.connect(audioCtx.destination);
+    src.start(t);
+  }catch(e){}
+}
+function playIntroFinish(){
+  // Tiếng tĩnh điện radio mờ khi gõ xong tiêu đề
+  try{
+    if(!audioCtx) return;
+    const t=audioCtx.currentTime;
+    const bufSize=audioCtx.sampleRate*0.22;
+    const buf=audioCtx.createBuffer(1,bufSize,audioCtx.sampleRate);
+    const d=buf.getChannelData(0);
+    for(let i=0;i<bufSize;i++) d[i]=(Math.random()*2-1)*Math.sin(Math.PI*i/bufSize);
+    const src=audioCtx.createBufferSource(); src.buffer=buf;
+    const bpf=audioCtx.createBiquadFilter(); bpf.type='bandpass'; bpf.frequency.value=2400; bpf.Q.value=0.5;
+    const gain=audioCtx.createGain();
+    gain.gain.setValueAtTime(0.0,t);
+    gain.gain.linearRampToValueAtTime(0.032,t+0.05);
+    gain.gain.exponentialRampToValueAtTime(0.0001,t+0.22);
+    src.connect(bpf); bpf.connect(gain); gain.connect(audioCtx.destination);
+    src.start(t);
+  }catch(e){}
+}
+
 function typeIntroTitle(){
   const titleEl=document.querySelector('.intro-title');
   if(!titleEl) return;
@@ -742,9 +809,12 @@ function typeIntroTitle(){
     if(i<text.length){
       const ch=text[i++];
       titleEl.insertBefore(document.createTextNode(ch),cur);
+      if(ch===' ') playIntroSpace();
+      else playIntroKey();
       const delay=ch===' '?80:90+Math.random()*60;
       setTimeout(typeChar,delay);
     } else {
+      playIntroFinish();
       setTimeout(()=>{ if(cur.parentNode) cur.remove(); },1200);
     }
   }
@@ -891,15 +961,21 @@ progressBar.addEventListener('keydown',(e)=>{
 /* [8] Marquee tên bài nếu dài */
 function setTrackName(label){
   trackName.textContent=label;
+  /* Double rAF để layout render xong trước khi đo — quan trọng trên desktop */
   requestAnimationFrame(()=>{
-    const strip=trackName.parentElement;
-    const inner=trackName;
-    const overflow=inner.scrollWidth-strip.clientWidth;
-    if(overflow>8){
-      const dist=-(overflow+24);
-      inner.style.setProperty('--marquee-dist',dist+'px');
-      inner.style.animation=`marquee ${(inner.scrollWidth/28)}s linear 1.5s infinite alternate`;
-    }
+    requestAnimationFrame(()=>{
+      const strip=trackName.parentElement;
+      const inner=trackName;
+      inner.style.animation='none';
+      inner.style.transform='translateX(0)';
+      const overflow=inner.scrollWidth-strip.clientWidth;
+      if(overflow>8){
+        const dist=-(overflow+32);
+        inner.style.setProperty('--marquee-dist',dist+'px');
+        const dur=Math.max(6,inner.scrollWidth/28);
+        inner.style.animation=`marquee ${dur}s linear 1.8s infinite alternate`;
+      }
+    });
   });
 }
 
@@ -924,6 +1000,7 @@ function startEndStatic(){
   endStaticCv.height=endStaticCv.offsetHeight*devicePixelRatio||300;
   endStaticCv.style.width='100%'; endStaticCv.style.height='100%';
   endStaticCv.classList.add('on');
+  if(endStaticRaf){ cancelAnimationFrame(endStaticRaf); endStaticRaf=null; }
   let frame=0;
   function tick(){
     frame++;
@@ -1183,7 +1260,11 @@ function autoScroll(){
     const maxScroll=scroller.scrollHeight-scroller.clientHeight;
     if(scroller.scrollTop<maxScroll-1) scroller.scrollTop+=0.18;
   }
-  if(!stopped) scrollRafId=requestAnimationFrame(autoScroll);
+  if(!stopped){
+    scrollRafId=requestAnimationFrame(autoScroll);
+  } else {
+    scrollRafId=null;
+  }
 }
 
 /* ── TIẾT KIỆM PIN: tạm dừng khi tab bị ẩn ── */
@@ -1191,18 +1272,33 @@ let tabHidden=false;
 document.addEventListener('visibilitychange',()=>{
   tabHidden=document.hidden;
   if(tabHidden){
+    /* Dừng audio */
     if(audioCtx&&audioCtx.state==='running') audioCtx.suspend().catch(()=>{});
+    /* Dừng TẤT CẢ animation loops để tránh lag khi quay lại */
+    if(rafId){ cancelAnimationFrame(rafId); rafId=null; }
+    if(scrollRafId){ cancelAnimationFrame(scrollRafId); scrollRafId=null; }
+    if(endStaticRaf){ cancelAnimationFrame(endStaticRaf); endStaticRaf=null; }
   } else {
+    /* Resume audio */
     if(audioCtx&&audioCtx.state==='suspended'&&!stopped) audioCtx.resume().catch(()=>{});
+    /* Khởi động lại loops — reset lastTs để tránh dt khổng lồ */
+    if(!stopped){
+      if(!rafId){ lastTs=0; rafId=requestAnimationFrame(loop); }
+      if(!scrollRafId) scrollRafId=requestAnimationFrame(autoScroll);
+    }
+    /* Nếu đang ở màn end thì restart endStatic */
+    if(endStaticRaf===null&&document.getElementById('screen-end').style.opacity==='1'){
+      startEndStatic();
+    }
   }
 });
 
 /* ── MAIN LOOP ── */
 function loop(ts){
   if(!lastTs) lastTs=ts;
-  const dt=(ts-lastTs)/1000; lastTs=ts;
+  const dt=Math.min((ts-lastTs)/1000, 0.1); /* cap 100ms tránh nhảy khi tab resume */
+  lastTs=ts;
   if(!stopped){
-    // [4] Timer cập nhật từ audio nếu có, fallback sang đồng hồ
     if(!MUSIC_SRC){
       const e=Math.floor((Date.now()-startTime)/1000);
       timerEl.textContent=String(Math.floor(e/60)).padStart(2,'0')+':'+String(e%60).padStart(2,'0');
@@ -1287,7 +1383,7 @@ btnStop.addEventListener('click',()=>{
   stopped=true; scrollPaused=true;
   btnStop.disabled=true;
   const lbl=btnStop.querySelector('.stop-label');
-  lbl.textContent='đang ngắt...'; lbl.style.letterSpacing='0.6em';
+  lbl.textContent='đang ngắt...';
 
   scroller.style.transition='opacity 1.2s ease'; scroller.style.opacity='0';
   playClickSound();
@@ -1314,6 +1410,59 @@ btnStop.addEventListener('click',()=>{
   },1800);
 });
 
+/* ── TYPEWRITER SOUNDS ── */
+function playTypeKey(){
+  try{
+    if(!audioCtx) return;
+    const t=audioCtx.currentTime;
+    const buf=audioCtx.createBuffer(1,audioCtx.sampleRate*0.04,audioCtx.sampleRate);
+    const d=buf.getChannelData(0);
+    for(let i=0;i<d.length;i++) d[i]=(Math.random()*2-1)*Math.pow(1-i/d.length,2);
+    const src=audioCtx.createBufferSource(); src.buffer=buf;
+    const hpf=audioCtx.createBiquadFilter(); hpf.type='highpass'; hpf.frequency.value=1200+Math.random()*400;
+    const gain=audioCtx.createGain();
+    gain.gain.setValueAtTime(0.022+Math.random()*0.012,t);
+    gain.gain.exponentialRampToValueAtTime(0.0001,t+0.04);
+    src.connect(hpf); hpf.connect(gain); gain.connect(audioCtx.destination);
+    src.start(t);
+  }catch(e){}
+}
+function playTypePause(){
+  try{
+    if(!audioCtx) return;
+    const t=audioCtx.currentTime;
+    const buf=audioCtx.createBuffer(1,audioCtx.sampleRate*0.18,audioCtx.sampleRate);
+    const d=buf.getChannelData(0);
+    for(let i=0;i<d.length;i++) d[i]=(Math.random()*2-1)*Math.sin(Math.PI*i/d.length);
+    const src=audioCtx.createBufferSource(); src.buffer=buf;
+    const lpf=audioCtx.createBiquadFilter(); lpf.type='lowpass'; lpf.frequency.value=320;
+    const gain=audioCtx.createGain();
+    gain.gain.setValueAtTime(0.0,t);
+    gain.gain.linearRampToValueAtTime(0.018,t+0.06);
+    gain.gain.exponentialRampToValueAtTime(0.0001,t+0.18);
+    src.connect(lpf); lpf.connect(gain); gain.connect(audioCtx.destination);
+    src.start(t);
+  }catch(e){}
+}
+function playTypeEnd(){
+  try{
+    if(!audioCtx) return;
+    const t=audioCtx.currentTime;
+    [0,0.18,0.38].forEach((delay,idx)=>{
+      const osc=audioCtx.createOscillator();
+      const gain=audioCtx.createGain();
+      const freqs=[740,988,1318];
+      osc.type='sine';
+      osc.frequency.setValueAtTime(freqs[idx],t+delay);
+      gain.gain.setValueAtTime(0.0,t+delay);
+      gain.gain.linearRampToValueAtTime(0.028,t+delay+0.05);
+      gain.gain.exponentialRampToValueAtTime(0.0001,t+delay+1.1);
+      osc.connect(gain); gain.connect(audioCtx.destination);
+      osc.start(t+delay); osc.stop(t+delay+1.2);
+    });
+  }catch(e){}
+}
+
 /* ── TYPEWRITER ── */
 function typeWriter(text,el,spd){
   el.innerHTML='';
@@ -1322,9 +1471,17 @@ function typeWriter(text,el,spd){
   function type(){
     if(i<chars.length){
       const ch=chars[i++];
-      if(ch==='\n') el.insertBefore(document.createElement('br'),cur);
-      else el.insertBefore(document.createTextNode(ch),cur);
+      if(ch==='\n'){
+        el.insertBefore(document.createElement('br'),cur);
+        playTypePause();
+      } else {
+        el.insertBefore(document.createTextNode(ch),cur);
+        if(/[.,!?\-—]/.test(ch)) playTypePause();
+        else if(ch!==' ') playTypeKey();
+      }
       setTimeout(type,(/[.,!?\-—]/.test(ch)?spd*9:ch==='\n'?spd*6:spd)+Math.random()*spd*0.45);
+    } else {
+      setTimeout(()=>{ if(cur.parentNode) cur.remove(); playTypeEnd(); },1000);
     }
   }
   setTimeout(type,700);
@@ -1340,28 +1497,28 @@ function typeWriter(text,el,spd){
       month:1, day:1,
       icon:'🎊',
       tag:'· chúc mừng năm mới ·',
-      msg:'Chúc mừng năm mới em nhé! 🎉\nChúc em luôn vui vẻ,\n<span class="hm-name">mau ăn chóng lớn,</span>\nvà sớm có người yêu đi nhá! 🤭',
+      msg:'Chúc mừng năm mới! 🎉\nChúc em luôn vui vẻ,\n<span class="hm-name">mau ăn chóng lớn,</span>\nvà sớm có người yêu đi nhá! 🤭',
       sub:'01/01 — 107.9 MHz'
     },
     {
       month:2, day:14,
       icon:'💌',
       tag:'· valentine ·',
-      msg:'Hôm nay là 14/2 rồi đó —\n<span class="hm-name">ngày Valentine năm nay\nem có ai tặng hoa chưa?</span>\nNếu chưa thì anh gửi\nmột bông hoa vô hình từ xa nhé.',
+      msg:'Hôm nay là 14/2 rồi đó —\n<span class="hm-name">ngày Valentine năm nay\nem có ai tặng hoa chưa?</span>\nNếu chưa thì anh gửi\nMột đoá hoa thật đẹp cho em.',
       sub:'14/02 — 107.9 MHz'
     },
     {
       month:3, day:8,
       icon:'🌹',
       tag:'· 8 tháng 3 ·',
-      msg:'Ngày Quốc tế Phụ nữ đến rồi —\n<span class="hm-name">8/3 này em đã có người yêu chưa?</span>\nDù có hay chưa, hôm nay\nem xứng đáng được yêu thương\nthật nhiều.',
+      msg:'Ngày Quốc tế Phụ nữ lại đến rồi —\n<span class="hm-name">8/3 này anh không thể tặng quà cho em như lần trước được</span>\nDù có hay chưa, dù hôm nay anh không còn chung đường \nanh vẫn mong em luôn được yêu thương và được trân tọng như cách em xứng đáng.',
       sub:'08/03 — 107.9 MHz'
     },
     {
       month:4, day:30,
       icon:'🕊️',
       tag:'· 30 tháng 4 ·',
-      msg:'Một ngày nghỉ dài —\nanh nghĩ đến em không biết\n<span class="hm-name">hôm nay em đang ở đâu,\nvà đang ở bên ai?</span>',
+      msg:'Một ngày nghỉ dài —\nNgày mà ta nhắc về sự đoàn tụ\n<span class="hm-name">Chúng ta đã từng nhiều lần rời xa nhau rồi quay lại\nĐã từng nghĩ rằng chỉ cần còn thương thì sẽ luôn tìm được nhau giữa cuộc đời rộng lớn này.\nNhưng hoa ra không phải cuộc gặp gỡ nào cũng có một cái kết trọn vẹn.\nDẫu vậy, anh vẫn cảm thây biết ơn.\nVì giữa hàng triệu người ngoài kia, chúng ta đã từng tìm thấy nhau giữa bầu trời Sky.\nChúc em có một ngày 30/4 thật vui vẻ và bình yên</span>',
       sub:'30/04 — 107.9 MHz'
     },
     {
@@ -1375,22 +1532,36 @@ function typeWriter(text,el,spd){
       month:10, day:20,
       icon:'🌸',
       tag:'· 20 tháng 10 ·',
-      msg:'Ngày Phụ nữ Việt Nam —\n<span class="hm-name">20/10 này ai chúc mừng em chưa?</span>\nAnh chúc em luôn giữ được\ncái cách em cười trước khi nói xong câu.',
+      msg:'Chúc mừng ngày Phụ nữ Việt Nam, em. —\n<span class="hm-name">Anh từng nghĩ rất lâu xem mình nên chúc em điều gì vào ngày hôm nay.</span>\nRồi anh nhận ra, điều đẹp nhất có lẽ không phải là được yêu thương bởi ai đó, mà là luôn giữ được giá trị của chính mình.\nVậy nên anh mong em sẽ luôn tự tin, mạnh mẽ và kiên định với những điều em lựa chọn.\nMong những ước mơ em từng kể với anh sẽ dần trở thành hiện thực.\nMong cô gái anh từng gặp giữa bầu trời Sky vẫn luôn giữ được sự dịu dàng và chân thành của ngày ấy.\nVà dù sau này chúng ta có trở thành những người xa lạ đi nữa, anh vẫn sẽ luôn cảm thấy biết ơn vì đã từng gặp em.\nChúc em một ngày 20/10 thật hạnh phúc.',
       sub:'20/10 — 107.9 MHz'
     },
     {
       month:12, day:24,
       icon:'✨',
       tag:'· giáng sinh ·',
-      msg:'Đêm Giáng sinh rồi —\n<span class="hm-name">năm nay em đón Noel\ncùng với ai?</span>\nAnh hy vọng người đó\nxứng đáng với em.',
+      msg:'Ngoài kia có thể đang rất lạnh. —\n<span class="hm-name">Nhưng anh hy vọng trái tim em vẫn luôn ấm áp bởi những người thật lòng yêu thương em.\nGiáng sinh năm nay anh không còn xuất hiện trong câu chuyện của em nữa.</span>\nNhưng giữa hàng triệu ánh đèn đang sáng lên ngoài kia, anh vẫn muốn lặng lẽ chúc em một mùa Noel an lành.\nxMerry Christmas, cô gái từng là điều kỳ diệu của anh.',
       sub:'24/12 — 107.9 MHz'
     },
     {
       month:12, day:31,
       icon:'🎆',
       tag:'· giao thừa ·',
-      msg:'Năm cũ sắp qua rồi —\n<span class="hm-name">lúc đếm ngược em đang\nở bên ai?</span>\nDù là ai, anh mong người đó\nmang lại cho em một năm thật bình yên.',
+      msg:'Em à —\n<span class="hm-name">ngoài kia pháo hoa sắp sáng rồi\nở bên ai?</span>\nthêm một năm nữa trôi qua\nNăm nay có lẽ không còn nhắn cho nhau những lời chúc đầu tiên như trước nữa. Cũng không còn những cuộc nói chuyện kéo dài đến khuya hay những lần cùng nhau ngắm bầu trời trong Sky\nNhưng giữu thời khắc chuyển giao của năm cũ và năm mới, anh vẫn muốn dành cho em một lời chúc.\nCảm ơn em vì đã từng đến bên xuất hiện\nCảm ơn em vì những niềm vui, những kỷ niệm và cả những bài học mà chúng ta đã cùng trải qua\nNăm mới rồi\nAnh mong em đã vào được ngôi trường minh mong ước. MOng em sẽ gặp được những người thật lòng yêu thương em. Chúc mừng năm mớ, cô gái anh từng thương.',
       sub:'31/12 — 107.9 MHz'
+    },
+    {
+      month:11, day:20,
+      icon:'🎆',
+      tag:'· nhà giáo việt nam ·',
+      msg:'ngày hôm nay thật đặc biệt khi em từng nói vơi anh về ước mơ của mình —\n<span class="hm-name">có thể em vẫn chưa đứng trên bục giảng, nhưng anh tin rằng em chắc chẵn sẽ làm được\nở bên ai?</span>\nChúc em giữ được nhiệt huyết của tuổi trẻ và sự tử tế mà anh từng nhìn thấy\nanh luôn tin em làm được.',
+      sub:'20/11 — 107.9 MHz'
+    },
+    {
+      month:1, day:2,
+      icon:'🎆',
+      tag:'· Sinh nhật vui vẻ ·',
+      msg:'Chúc mừng sinh nhật em —\n<span class="hm-name">lại thêm một tuổi mới rồi nhỉ\nở bên ai?</span>\nanh không còn quyền bên em những ngày đặc biệt như này nữa, nhưng anh mong em sẽ mỉm cười thật nhiều, gặp thật nhiều điều tốt đẹp và từng bước trở thành phiên bản mà em luôn mong muốn\nNếu hôm nay có ai đó hỏi anh muốn gửi đến em là gì, thì đó chỉ đơn giản là:\n"Bình an và hạnh phúc".',
+      sub:'2/1 — 107.9 MHz'
     },
   ];
 
